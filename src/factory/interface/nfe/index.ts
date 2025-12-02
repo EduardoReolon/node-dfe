@@ -138,7 +138,8 @@ export interface Imposto {
     issqn: Issqn;
     pisst: PisST;
     cofinsst: CofinsST;
-    icmsUfDest: IcmsUfDest
+    icmsUfDest: IcmsUfDest;
+    IBSCBS: any
 }
 
 export interface Icms {

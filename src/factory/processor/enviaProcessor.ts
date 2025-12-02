@@ -535,6 +535,7 @@ export class EnviaProcessor {
             II: imposto.ii ? [this.getImpostoII(imposto.ii, cfop)] : [],
             ICMSUFDest: imposto.icmsUfDest ? [this.getIcmsUfDest(imposto.icmsUfDest)] : [],
             ISSQN: '',
+            IBSCBS: imposto.IBSCBS
         };
 
         return detImposto;
