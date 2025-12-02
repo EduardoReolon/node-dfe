@@ -116,6 +116,7 @@ export interface Imposto {
     pisst: PisST;
     cofinsst: CofinsST;
     icmsUfDest: IcmsUfDest;
+    IBSCBS: any;
 }
 export interface Icms {
     orig: string;
