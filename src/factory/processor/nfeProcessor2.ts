@@ -80,6 +80,8 @@ export class NFeProcessor {
                             result.consultaProc = <RetornoProcessamento>await this.retornoProcessor.executar(recibo);
                             retConsReciNFe = Object(result.consultaProc.data).retConsReciNFe;
                             finalResponse = retConsReciNFe;
+                        } else if (retEnviNFe.protNFe) {
+                            finalResponse = retEnviNFe;
                         }
                     } 
                     // Lógica Síncrona (NFC-e Modelo 65)
