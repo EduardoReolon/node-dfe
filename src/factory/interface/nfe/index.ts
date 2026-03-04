@@ -274,10 +274,17 @@ export interface Issqn {
     indIncentivo: string
 }
 
+export interface IbsCbsTot {
+    vIBS: string;
+    vCBS: string;
+    vIS: string;
+}
+
 export interface Total {
     icmsTot: IcmsTot;
     issqnTot: IssqnTot;
     retTrib: RetTrib;
+    IBSCBSTot?: IbsCbsTot;
 }
 
 export interface IcmsTot {

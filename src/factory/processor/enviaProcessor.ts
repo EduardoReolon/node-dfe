@@ -92,7 +92,7 @@ export class EnviaProcessor {
             }
         } catch (ex) {
             result.success = false;
-            result.error = ex;
+            result.error = ex as any;
         }
 
         return result;
@@ -163,7 +163,7 @@ export class EnviaProcessor {
 
                 log(jsonOneLevel(retornoEnvio), 'retornoEnvio.full');
             } catch (e) {
-                log(`ja deu erro pra logar.......${e.toString()}`, 'retornoEnvio')
+                log(`ja deu erro pra logar.......${e?.toString()}`, 'retornoEnvio')
             }
 
             if (retornoEnvio && retornoEnvio.data) {
@@ -189,7 +189,7 @@ export class EnviaProcessor {
             result.envioNF = retornoEnvio;
         } catch (ex) {
             result.success = false;
-            result.error = ex;
+            result.error = ex as any;
         }
         result.success = true; //nao esta confirmada, mas houve sucesso nessa requisicao de envio da nota
         return result;
@@ -1263,7 +1263,8 @@ export class EnviaProcessor {
 
     private getTotal(total: Total) {
         return <schema.TNFeInfNFeTotal>{
-            ICMSTot: total.icmsTot
+            ICMSTot: total.icmsTot,
+            ...(total.IBSCBSTot ? { IBSCBSTot: total.IBSCBSTot } : {})
         }
     }
 
